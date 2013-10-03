@@ -1,0 +1,34 @@
+<div class='row-fluid'>
+<div id="tab" class="btn-group">
+  <a href="/reports/" class="btn">Today</a>
+  <a href="/reports/this_week" class="btn" >Week</a>
+  <a href="/reports/this_month" class="btn" >Month</a>
+  <a href="/reports/this_year" class="btn" >Year</a>
+</div>
+</div>
+<br>
+<div class='control-group row-fluid'>
+  <div class='well'>
+    <table class='table'>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Date</th>
+          <th>Service</th>
+          <th>Notes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @reports.each do |checkin| %>
+        <tr>
+          <td><%= checkin.account.name %></td>
+          <td><%= checkin.created_at.strftime("%D") %></td>
+          <td><%= checkin.service %></td>
+          <td><%= checkin.notes %></td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
+<%= will_paginate @reports %>

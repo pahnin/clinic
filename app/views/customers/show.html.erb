@@ -1,0 +1,12 @@
+  <div class="controls">
+    <div class="span2">
+      <label>Account name</label>
+    </div>
+    <div class="span2">
+      <%= select_tag "accounts_select", options_from_collection_for_select(@customer.accounts, "id", "name"),{ :class => "accounts_select", :prompt => "Select an account" } %>
+    </div>
+    <div class="span1"></div>
+    <div class="span2">
+      <small><%= link_to "Add a new account for this mobile", new_customer_account_path(@customer.id) %></small>
+    </div>
+  </div>

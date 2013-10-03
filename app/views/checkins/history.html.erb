@@ -1,0 +1,24 @@
+<div class='well'>
+<table class='table'>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Date</th>
+      <th>Service</th>
+      <th>Notes</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @history.each do |checkin| %>
+      <tr>
+        <td><%= checkin.account.name %></td>
+        <td><%= checkin.created_at.strftime("%D") %></td>
+        <td><%= checkin.service %></td>
+        <td><%= checkin.notes %></td>
+        <td><%= link_to checkin_path(checkin.id), method: :delete do %><i class="icon-trash icon-white"></i><% end %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>

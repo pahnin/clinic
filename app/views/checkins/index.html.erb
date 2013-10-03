@@ -1,0 +1,46 @@
+<div class="control-group row-fluid">
+  <div class="controls mobile-block">
+    <div class='span2'>
+      <%= label_tag "mobile_number", "Mobile Number" %>
+    </div>
+    <div class='span3'>
+      <%= text_field_tag :mobile_number, nil, :class => "mobile_number" %>
+    </div>
+    <div class='span2'>
+      <button class="btn btn-small" id="mobile_number_check">Check mobile</button>
+    </div>
+    <div class='mobile-error'></div>
+  </div>
+</div>
+<div class="control-group row-fluid">
+  <div class="controls customer_details">
+  </div>  
+</div>
+<div class="control-group row-fluid">
+  <div class="controls account_details">
+  </div>  
+</div>
+
+<%= form_for @checkin do |f| %>
+  <div class="controls row-fluid">
+    <div class="span1">
+      <%= f.label :service, "Diagnosis" %>
+    </div>
+    <div class="span3">
+      <%= f.text_area :service %>
+    </div>
+    <div class="span1">
+      <%= f.label :notes, "Treatment" %>
+    </div>
+    <div class="span3">
+      <%= f.text_area :notes %>
+    </div>
+  </div>
+  <div class="controls row-fluid">
+      <%= f.submit "Submit" %>
+  </div>
+<% end %>
+<div class="control-group row-fluid">
+  <div class="controls history">
+  </div>  
+</div>
